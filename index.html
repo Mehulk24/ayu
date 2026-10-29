@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A Little Birthday Surprise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Nunito:wght@400;600;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+<symbol id="bear" viewBox="0 0 120 150">
+<defs>
+ <radialGradient id="fur" cx="32%" cy="22%" r="78%"><stop offset="0" stop-color="#ffe6a0"/><stop offset=".55" stop-color="#f8c85f"/><stop offset="1" stop-color="#d99535"/></radialGradient>
+ <radialGradient id="muzzle" cx="35%" cy="25%" r="80%"><stop offset="0" stop-color="#fff4d9"/><stop offset="1" stop-color="#f3d7a5"/></radialGradient>
+ <linearGradient id="hat" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9fe2f1"/><stop offset=".5" stop-color="#ffb7d0"/><stop offset="1" stop-color="#b7a5f5"/></linearGradient>
+</defs>
+<!-- ears and body -->
+<ellipse cx="60" cy="113" rx="29" ry="32" fill="url(#fur)"/>
+<ellipse cx="60" cy="119" rx="17" ry="20" fill="url(#muzzle)"/>
+<circle cx="34" cy="35" r="15" fill="url(#fur)"/><circle cx="86" cy="35" r="15" fill="url(#fur)"/>
+<circle cx="34" cy="35" r="7" fill="#e9a05a"/><circle cx="86" cy="35" r="7" fill="#e9a05a"/>
+<ellipse cx="34" cy="143" rx="15" ry="8" fill="url(#fur)"/><ellipse cx="85" cy="143" rx="15" ry="8" fill="url(#fur)"/>
+<ellipse cx="29" cy="103" rx="10" ry="18" fill="url(#fur)" transform="rotate(28 29 103)"/>
+<!-- waving paw -->
+<ellipse cx="94" cy="86" rx="11" ry="23" fill="url(#fur)" transform="rotate(-35 94 86)"/>
+<circle cx="102" cy="65" r="13" fill="url(#fur)"/><circle cx="99" cy="61" r="2.2" fill="#f4b65a"/><circle cx="107" cy="66" r="2.2" fill="#f4b65a"/>
+<!-- head -->
+<circle cx="60" cy="63" r="38" fill="url(#fur)"/>
+<ellipse cx="60" cy="78" rx="17" ry="13" fill="url(#muzzle)"/>
+<ellipse cx="60" cy="71" rx="6" ry="4.5" fill="#57342a"/>
+<circle cx="46" cy="61" r="4" fill="#38251e"/><circle cx="74" cy="61" r="4" fill="#38251e"/>
+<circle cx="47" cy="60" r="1.3" fill="#fff"/><circle cx="75" cy="60" r="1.3" fill="#fff"/>
+<path d="M52 82 Q60 90 68 81" stroke="#6c4031" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+<path d="M58 83 Q64 82 64 87 Q62 92 58 88Z" fill="#f06b83"/>
+<ellipse cx="39" cy="74" rx="6" ry="4" fill="#ff9cae" opacity=".65"/><ellipse cx="81" cy="74" rx="6" ry="4" fill="#ff9cae" opacity=".65"/>
+<!-- party hat -->
+<path d="M42 34 L55 2 Q63 20 78 34Z" fill="url(#hat)" stroke="#fff0dc" stroke-width="1.5"/>
+<path d="M50 18 L67 26" stroke="#fff4e8" stroke-width="4" opacity=".9"/>
+<circle cx="55" cy="3" r="5" fill="#ffb3ca"/><path d="M43 34 Q60 40 78 34" stroke="#f6a4bb" stroke-width="3" fill="none"/>
+<path d="M20 98 Q10 89 17 82" stroke="#e4a24b" stroke-width="4" fill="none" stroke-linecap="round"/>
+</symbol>
+<symbol id="bunny" viewBox="0 0 120 150">
+<defs>
+ <radialGradient id="fur" cx="32%" cy="22%" r="78%"><stop offset="0" stop-color="#ffe6a0"/><stop offset=".55" stop-color="#f8c85f"/><stop offset="1" stop-color="#d99535"/></radialGradient>
+ <radialGradient id="muzzle" cx="35%" cy="25%" r="80%"><stop offset="0" stop-color="#fff4d9"/><stop offset="1" stop-color="#f3d7a5"/></radialGradient>
+ <linearGradient id="hat" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9fe2f1"/><stop offset=".5" stop-color="#ffb7d0"/><stop offset="1" stop-color="#b7a5f5"/></linearGradient>
+</defs>
+<!-- ears and body -->
+<ellipse cx="60" cy="113" rx="29" ry="32" fill="url(#fur)"/>
+<ellipse cx="60" cy="119" rx="17" ry="20" fill="url(#muzzle)"/>
+<circle cx="34" cy="35" r="15" fill="url(#fur)"/><circle cx="86" cy="35" r="15" fill="url(#fur)"/>
+<circle cx="34" cy="35" r="7" fill="#e9a05a"/><circle cx="86" cy="35" r="7" fill="#e9a05a"/>
+<ellipse cx="34" cy="143" rx="15" ry="8" fill="url(#fur)"/><ellipse cx="85" cy="143" rx="15" ry="8" fill="url(#fur)"/>
+<ellipse cx="29" cy="103" rx="10" ry="18" fill="url(#fur)" transform="rotate(28 29 103)"/>
+<!-- waving paw -->
+<ellipse cx="94" cy="86" rx="11" ry="23" fill="url(#fur)" transform="rotate(-35 94 86)"/>
+<circle cx="102" cy="65" r="13" fill="url(#fur)"/><circle cx="99" cy="61" r="2.2" fill="#f4b65a"/><circle cx="107" cy="66" r="2.2" fill="#f4b65a"/>
+<!-- head -->
+<circle cx="60" cy="63" r="38" fill="url(#fur)"/>
+<ellipse cx="60" cy="78" rx="17" ry="13" fill="url(#muzzle)"/>
+<ellipse cx="60" cy="71" rx="6" ry="4.5" fill="#57342a"/>
+<circle cx="46" cy="61" r="4" fill="#38251e"/><circle cx="74" cy="61" r="4" fill="#38251e"/>
+<circle cx="47" cy="60" r="1.3" fill="#fff"/><circle cx="75" cy="60" r="1.3" fill="#fff"/>
+<path d="M52 82 Q60 90 68 81" stroke="#6c4031" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+<path d="M58 83 Q64 82 64 87 Q62 92 58 88Z" fill="#f06b83"/>
+<ellipse cx="39" cy="74" rx="6" ry="4" fill="#ff9cae" opacity=".65"/><ellipse cx="81" cy="74" rx="6" ry="4" fill="#ff9cae" opacity=".65"/>
+<!-- party hat -->
+<path d="M42 34 L55 2 Q63 20 78 34Z" fill="url(#hat)" stroke="#fff0dc" stroke-width="1.5"/>
+<path d="M50 18 L67 26" stroke="#fff4e8" stroke-width="4" opacity=".9"/>
+<circle cx="55" cy="3" r="5" fill="#ffb3ca"/><path d="M43 34 Q60 40 78 34" stroke="#f6a4bb" stroke-width="3" fill="none"/>
+<path d="M20 98 Q10 89 17 82" stroke="#e4a24b" stroke-width="4" fill="none" stroke-linecap="round"/>
+</symbol>
+<symbol id="envelope" viewBox="0 0 260 170"><rect width="260" height="170" rx="12" fill="#f3e3c4"/><path d="M0 12L130 105L260 12" fill="none"/><polygon points="0,170 130,80 260,170" fill="#ecd9b0"/><polygon points="0,6 100,92 0,164" fill="#e8d3a4"/><polygon points="260,6 160,92 260,164" fill="#e8d3a4"/><polygon points="0,0 260,0 130,100" fill="#f0dfb8"/><g stroke="#7aa06a" stroke-width="2.5" fill="none"><path d="M112 96C100 60 96 40 94 26M128 98C128 62 130 40 138 22M146 96C156 64 164 48 176 36"/></g><g fill="#a98bd6"><ellipse cx="94" cy="30" rx="4" ry="9"/><ellipse cx="98" cy="46" rx="4" ry="8"/><ellipse cx="138" cy="26" rx="4" ry="9"/><ellipse cx="134" cy="44" rx="4" ry="8"/><ellipse cx="176" cy="40" rx="4" ry="9"/><ellipse cx="168" cy="56" rx="4" ry="8"/></g><path d="M130 96C95 70 70 100 104 112ZM130 96C165 70 190 100 156 112Z" fill="#b99be0"/><circle cx="130" cy="98" r="20" fill="#e8587a"/><circle cx="130" cy="98" r="15" fill="none" stroke="#f58aa5" stroke-width="2"/><path d="M130 107c-10-7-13-12-13-16a6 6 0 0 1 13-2 6 6 0 0 1 13 2c0 4-3 9-13 16z" fill="#ffd3de"/></symbol>
+<symbol id="cakes" viewBox="0 0 140 170"><ellipse cx="70" cy="156" rx="62" ry="10" fill="#f1d9d2"/><rect x="63" y="146" width="14" height="14" fill="#f1d9d2"/><rect x="14" y="104" width="112" height="44" rx="8" fill="#ffb3c9"/><ellipse cx="70" cy="104" rx="56" ry="9" fill="#fff"/><rect x="30" y="68" width="80" height="38" rx="6" fill="#ffd0dc"/><ellipse cx="70" cy="68" rx="40" ry="8" fill="#fff"/><rect x="46" y="38" width="48" height="32" rx="5" fill="#ffe1ea"/><ellipse cx="70" cy="38" rx="24" ry="6" fill="#fff"/><g fill="#e8334a"><circle cx="24" cy="104" r="6"/><circle cx="48" cy="110" r="6"/><circle cx="92" cy="110" r="6"/><circle cx="116" cy="104" r="6"/><circle cx="42" cy="68" r="5"/><circle cx="98" cy="68" r="5"/><circle cx="56" cy="40" r="5"/><circle cx="84" cy="40" r="5"/></g><g fill="#fff"><rect x="55" y="16" width="4" height="22" rx="2"/><rect x="68" y="12" width="4" height="26" rx="2"/><rect x="81" y="16" width="4" height="22" rx="2"/></g><path d="M70 150l-14-6v12zM70 150l14-6v12z" fill="#ff8fb0"/></symbol>
+<symbol id="balloons" viewBox="0 0 100 130"><g stroke="#aaa" stroke-width="1" fill="none"><path d="M30 44Q50 90 50 128M70 40Q54 90 50 128M50 30Q50 80 50 128"/></g><circle cx="30" cy="30" r="22" fill="#b9e6c9"/><circle cx="72" cy="28" r="20" fill="#ffd36e"/><circle cx="50" cy="18" r="19" fill="#ffb3c9"/><circle cx="46" cy="56" r="17" fill="#cdb8f5"/></symbol>
+</svg>
+
+<main id="app">
+  <div class="top">
+    <div class="dots" id="dots"></div>
+    
+  </div>
+  <div id="flash"></div>
+
+  <section class="scene active" data-scene="loading">
+    <div class="candle"><i></i></div>
+    <p class="serif-i">Preparing your little surprise...</p>
+  </section>
+
+  <section class="scene" data-scene="envelope">
+    <i class="deco cloud" style="left:-50px;top:16%"></i><i class="deco cloud" style="right:-60px;bottom:10%"></i>
+    <span class="deco tw" style="right:12%;top:12%;font-size:30px">⭐</span><span class="deco tw" style="left:6%;bottom:6%;font-size:26px">❤️</span>
+    <p class="script">a little something ✦</p>
+    <h1>There’s something <em>for you</em></h1>
+    <p class="sub">A tiny birthday surprise, made just for you.</p>
+    <div class="env" id="env">
+      <div class="card"><span>for</span><b class="name"></b></div>
+      <svg class="envsvg"><use href="#envelope"/></svg>
+      <img class="chr bL character-img" src="images/teddy_praying.webp" alt="Cute birthday teddy bear"><img class="chr bR character-img" src="images/bunny_confetti.webp" alt="Cute birthday bunny">
+    </div>
+    <button class="btn" id="openBtn"><span class="knob">♥</span>Open your surprise ✨</button>
+  </section>
+
+  <section class="scene dark" data-scene="lights">
+    <div class="deco bulb"></div><span class="deco moon">🌙</span>
+    <img class="deco ghost character-img" src="images/teddy_praying.webp" alt="Cute teddy bear">
+    <p class="script gold">Shhh...</p>
+    <h1>The room is<br>waiting for you.</h1>
+    <p class="sub">Someone left the lights off on purpose.</p>
+    <button class="btn gold" id="lightBtn">Turn on the lights ✨</button>
+  </section>
+
+  <section class="scene party" data-scene="hello">
+    <div class="deco bunting" id="bunting"></div><div class="deco floor"></div>
+    <p class="script">Look who’s having a birthday...</p>
+    <h1>Happy Birthday,<br><em class="name" id="helloName"></em> ✨</h1>
+    <span class="pill" id="date"></span>
+    <button class="btn" data-next>There’s more 🎀</button>
+    <img class="deco chr bh character-img" src="images/teddy_balloon.webp" alt="Teddy bear holding a balloon"><img class="deco chr nh character-img" src="images/bunny_confetti.webp" alt="Bunny with party popper">
+    <svg class="deco bal"><use href="#balloons"/></svg><span class="deco gift">🎁</span><span class="deco flw">💐</span>
+  </section>
+
+  <section class="scene" data-scene="cake">
+    <p class="script">Cake time</p>
+    <h2 id="cakeTitle">Make the first cut ✨</h2>
+    <p class="sub" id="cakeSub">Swipe down across the cake, top to bottom.</p>
+    <div class="cake-wrap" id="cake"></div>
+    <button class="btn hidden" id="cakeBtn" data-next>Make a wish 🎂</button>
+  </section>
+
+  <section class="scene" data-scene="wish" id="wishScene">
+    <div class="duo"><img class="bear character-img" src="images/teddy_praying.webp" alt="Birthday teddy bear"><div class="cakebox"><img class="cake-art" src="images/teddy_cake.webp" alt="Strawberry birthday cake"><i class="fl" style="left:39%"></i><i class="fl" style="left:49%;top:6%"></i><i class="fl" style="left:59%"></i></div></div>
+    <h2 id="wishTitle">Close your eyes...</h2>
+    <p class="sub" id="wishSub">Make a little wish for the year ahead.</p>
+    <button class="btn" id="wishBtn">I made my wish ✨</button>
+  </section>
+
+  <section class="scene" data-scene="memories">
+    <span class="cam">📷</span>
+    <h2>Some moments are<br>worth keeping forever.</h2>
+    <p class="serif-i">Here’s to all the laughs, chaos, late-night talks and little moments.</p>
+    <div class="polaroids">
+      <figure><div class="g1"><img src="images/teddy_balloon.webp" alt="Teddy with balloon"></div><figcaption>that sunny picnic</figcaption></figure>
+      <figure><div class="g2"><img src="images/bunny_confetti.webp" alt="Party bunny"></div><figcaption>counting stars</figcaption></figure>
+      <figure><div class="g3"><img src="images/teddy_cake.webp" alt="Birthday cake"></div><figcaption>the great baking disaster</figcaption></figure>
+      <figure><div class="g4"><img src="images/teddy_gift.webp" alt="Teddy holding a gift"></div><figcaption>top of the world</figcaption></figure>
+    </div>
+    <button class="btn" data-next>Read your letter 💌</button>
+  </section>
+
+  <section class="scene letter-scene" data-scene="letter">
+    <div class="letter"><img class="flw2 heart-art" src="images/heart.webp" alt="Pink heart"><span class="bow">🎀</span>
+      <p class="script">a letter, just for you</p>
+      <h2>For you, <em class="name"></em></h2>
+      <p><span class="drop">H</span>appy birthday, you wonderful human.</p>
+      <p>I wanted to make you something that felt a little like you — warm, a bit silly, and full of tiny surprises. So here it is: a small corner of the internet that exists only because you do.</p>
+      <p class="sign">with love,<br><b class="from"></b></p>
+    </div>
+    <button class="btn" data-next>One last thing 🎂</button>
+  </section>
+
+  <section class="scene finale" data-scene="finale">
+    <span class="deco rise" style="left:6%">🎈</span><span class="deco rise" style="left:82%;animation-delay:1s">🎈</span><span class="deco rise" style="left:20%;animation-delay:2s;font-size:40px">🎈</span>
+    <img class="bear big character-img" src="images/teddy_gift.webp" alt="Teddy bear holding a birthday gift">
+    <h1>Happy Birthday,<br><em class="name"></em>! 🎂</h1>
+    <p class="sub">May this year bring you countless little reasons to smile.</p>
+    <p class="serif-i">— with love, <span class="from"></span></p>
+    <button class="btn light" id="replay">Replay the surprise ↻</button>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

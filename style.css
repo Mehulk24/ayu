@@ -1,0 +1,1171 @@
+:root {
+  --pink: #f0587f;
+  --pink-d: #d63f6a;
+  --cream: #fff3ec;
+  --ink: #2d2433;
+  --gold: #f6c445;
+  --serif: 'Playfair Display', serif;
+  --sans: 'Nunito', sans-serif;
+  --script: 'Caveat', cursive;
+  --k: 1
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0
+}
+
+html,
+body {
+  height: 100%
+}
+
+body {
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--cream);
+  overflow: hidden
+}
+
+#app {
+  position: relative;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden
+}
+
+.top {
+  position: absolute;
+  top: 14px;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 clamp(12px, 3vw, 32px);
+  pointer-events: none
+}
+
+.dots {
+  display: flex;
+  gap: 6px
+}
+
+.dots i {
+  width: 7px;
+  height: 7px;
+  border-radius: 9px;
+  background: #0002;
+  transition: .4s
+}
+
+.dots i.on {
+  background: var(--pink);
+  width: 22px
+}
+
+.sound {
+  pointer-events: auto;
+  border: 0;
+  background: #fffd;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #0002
+}
+
+#flash {
+  position: absolute;
+  inset: 0;
+  background: #fff8d6;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 30;
+  transition: opacity .35s
+}
+
+#flash.on {
+  opacity: 1
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(.97);
+  transition: opacity .6s, transform .6s, visibility .6s;
+  background: radial-gradient(circle at 50% 20%, #fff, var(--cream) 70%)
+}
+
+.scene.active {
+  opacity: 1;
+  visibility: visible;
+  transform: none
+}
+
+.inner {
+  zoom: var(--k);
+  width: 430px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 50px 28px 30px;
+  position: relative;
+  z-index: 2
+}
+
+.scene.active .inner>* {
+  animation: up .7s both
+}
+
+.scene.active .inner>*:nth-child(2) {
+  animation-delay: .12s
+}
+
+.scene.active .inner>*:nth-child(3) {
+  animation-delay: .24s
+}
+
+.scene.active .inner>*:nth-child(4) {
+  animation-delay: .36s
+}
+
+.scene.active .inner>*:nth-child(5) {
+  animation-delay: .48s
+}
+
+.scene.active .inner>*:nth-child(6) {
+  animation-delay: .6s
+}
+
+@keyframes up {
+  from {
+    opacity: 0;
+    transform: translateY(22px)
+  }
+}
+
+h1,
+h2,
+.serif-i {
+  font-family: var(--serif)
+}
+
+h1 {
+  font-size: 34px;
+  line-height: 1.15
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 1.2
+}
+
+em {
+  color: var(--pink);
+  font-style: italic
+}
+
+.script {
+  font-family: var(--script);
+  font-size: 24px;
+  color: var(--pink)
+}
+
+.sub {
+  color: #6b6272;
+  font-size: 15px;
+  max-width: 290px
+}
+
+.serif-i {
+  font-style: italic;
+  color: #4a4050;
+  max-width: 300px
+}
+
+.btn {
+  position: relative;
+  border: 0;
+  border-radius: 40px;
+  padding: 16px 40px;
+  font: 800 16px var(--sans);
+  color: #fff;
+  background: linear-gradient(#ff7a9c, var(--pink-d));
+  box-shadow: 0 6px 0 #b8325a, 0 12px 24px #f0587f55;
+  cursor: pointer;
+  transition: transform .15s, box-shadow .15s
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 2px dashed #fff7;
+  border-radius: 40px;
+  pointer-events: none
+}
+
+.btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #b8325a
+}
+
+.btn.gold {
+  background: linear-gradient(#ffe27a, var(--gold));
+  color: #4a3300;
+  box-shadow: 0 6px 0 #c99a1c, 0 0 30px #f6c44577
+}
+
+.btn.gold::after {
+  border-color: #fff9
+}
+
+.btn.light {
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 5px 0 #e3d6cf
+}
+
+.btn.light::after {
+  border-color: #0002
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none
+}
+
+.pill {
+  background: #fff;
+  border-radius: 20px;
+  padding: 7px 18px;
+  font-weight: 600;
+  box-shadow: 0 3px 10px #0001
+}
+
+.knob {
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(#fffa, #fff4);
+  display: grid;
+  place-items: center;
+  transition: left .8s cubic-bezier(.6, 0, .3, 1);
+  z-index: 1
+}
+
+#openBtn {
+  padding-left: 62px
+}
+
+#openBtn.go .knob {
+  left: calc(100% - 46px)
+}
+
+.deco {
+  position: absolute;
+  z-index: 1
+}
+
+/* loading */
+.candle {
+  position: relative;
+  width: 16px;
+  height: 70px;
+  background: repeating-linear-gradient(135deg, #fff 0 8px, #f9a8bd 8px 16px);
+  border-radius: 4px;
+  margin-top: 30px
+}
+
+.candle i {
+  position: absolute;
+  top: -28px;
+  left: 2px;
+  width: 12px;
+  height: 24px;
+  border-radius: 50% 50% 50% 50%/65% 65% 35% 35%;
+  background: radial-gradient(#fff, #ffb347);
+  box-shadow: 0 0 40px 14px #ffd16688;
+  animation: flick .25s infinite alternate
+}
+
+@keyframes flick {
+  to {
+    transform: scale(.9, 1.08) rotate(3deg)
+  }
+}
+
+.scene[data-scene=envelope] .inner {
+  gap: 8px;
+  padding-top: 36px;
+  padding-bottom: 16px;
+  justify-content: flex-start;
+  overflow-y: auto;
+  max-height: 100dvh
+}
+
+.scene[data-scene=envelope] {
+  background: radial-gradient(circle at 15% 15%, #ffd9e6, transparent 45%), radial-gradient(circle at 85% 85%, #e5dcff, transparent 50%), radial-gradient(circle at 85% 8%, #fff1bd, transparent 35%), var(--cream)
+}
+
+.cloud {
+  width: 190px;
+  height: 70px;
+  border-radius: 50px;
+  background: #fff;
+  opacity: .85;
+  filter: blur(2px);
+  box-shadow: 40px -22px 0 12px #fff;
+  animation: drift 8s ease-in-out infinite alternate
+}
+
+@keyframes drift {
+  to {
+    transform: translateX(24px)
+  }
+}
+
+.tw {
+  animation: tw 1.6s ease-in-out infinite alternate
+}
+
+@keyframes tw {
+  to {
+    transform: scale(1.25) rotate(12deg);
+    opacity: .7
+  }
+}
+
+.env {
+  position: relative;
+  width: 260px;
+  height: 170px;
+  margin: 10px 0 6px;
+  animation: float 3s ease-in-out infinite
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-8px)
+  }
+}
+
+.envsvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  filter: drop-shadow(0 14px 18px #0003)
+}
+
+.env .card {
+  position: absolute;
+  left: 50%;
+  top: 30px;
+  width: 150px;
+  height: 96px;
+  margin-left: -75px;
+  z-index: 1;
+  background: #fff radial-gradient(#f9bfd0 1.6px, transparent 2px) 0 0/13px 13px;
+  border-radius: 6px;
+  box-shadow: 0 3px 8px #0002;
+  font-family: var(--script);
+  font-size: 22px;
+  padding-top: 34px;
+  line-height: 1;
+  transform: rotate(-3deg);
+  transition: top 1s cubic-bezier(.3, 1.4, .5, 1)
+}
+
+.env .card b {
+  display: block;
+  color: var(--pink);
+  font-size: 30px
+}
+
+.env.open .card {
+  top: -52px
+}
+
+.chr {
+  pointer-events: none
+}
+
+.env .chr {
+  position: absolute;
+  z-index: 3;
+  transform: scale(0);
+  transition: transform .7s cubic-bezier(.3, 1.7, .5, 1) .5s
+}
+
+.env .bL {
+  left: -48px;
+  bottom: -16px;
+  width: 115px;
+  height: 150px;
+  transform-origin: bottom
+}
+
+.env .bR {
+  right: -42px;
+  bottom: -16px;
+  width: 62px;
+  height: 86px;
+  transform-origin: bottom
+}
+
+.env.open .chr {
+  transform: scale(1)
+}
+
+/* dark */
+.scene.dark {
+  background: radial-gradient(1.5px 1.5px at 20% 30%, #fff, transparent), radial-gradient(1.5px 1.5px at 70% 60%, #fff, transparent), radial-gradient(2px 2px at 40% 80%, #fff, transparent), radial-gradient(1.5px 1.5px at 85% 20%, #fff, transparent), radial-gradient(1px 1px at 10% 70%, #fff, transparent), radial-gradient(circle at 50% 30%, #3b2f5c, #16122a 75%);
+  color: #fff
+}
+
+.dark .sub {
+  color: #b9b0d4
+}
+
+.dark .script.gold {
+  color: var(--gold)
+}
+
+.bulb {
+  top: 0;
+  left: 22%;
+  width: 2px;
+  height: calc(110px*var(--k));
+  background: #aaa;
+  transform-origin: top;
+  animation: swing 3s ease-in-out infinite alternate
+}
+
+.bulb::after {
+  content: "";
+  position: absolute;
+  bottom: -26px;
+  left: -10px;
+  width: 22px;
+  height: 30px;
+  border-radius: 50%;
+  background: #5a5a66
+}
+
+@keyframes swing {
+  from {
+    transform: rotate(-4deg)
+  }
+
+  to {
+    transform: rotate(4deg)
+  }
+}
+
+.moon {
+  top: 8%;
+  right: 10%;
+  font-size: calc(84px*var(--k));
+  filter: drop-shadow(0 0 22px #ffe9a077);
+  animation: float 4s ease-in-out infinite
+}
+
+.ghost {
+  left: 6%;
+  bottom: 4%;
+  width: calc(120px*var(--k));
+  height: calc(150px*var(--k));
+  opacity: .18;
+  filter: brightness(.5)
+}
+
+/* party */
+.scene.party {
+  background: repeating-linear-gradient(90deg, #efe7ff 0 40px, #fff6e4 40px 80px)
+}
+
+.bunting {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: calc(70px*var(--k));
+  transform: translateY(-110%)
+}
+
+.bunting svg {
+  width: 100%;
+  height: 100%
+}
+
+.scene.active .bunting {
+  animation: drop 1s .2s both cubic-bezier(.3, 1.4, .5, 1)
+}
+
+@keyframes drop {
+  to {
+    transform: none
+  }
+}
+
+.floor {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 22%;
+  background: linear-gradient(#ffe0d6, #ffc3b8);
+  border-top: calc(8px*var(--k)) solid #fff
+}
+
+.bh {
+  left: calc(50% - 120px*var(--k));
+  bottom: 3%;
+  width: calc(100px*var(--k));
+  height: calc(125px*var(--k));
+  animation: hop 1.4s ease-in-out infinite
+}
+
+.nh {
+  right: calc(50% - 150px*var(--k));
+  bottom: 3%;
+  width: calc(70px*var(--k));
+  height: calc(98px*var(--k));
+  animation: hop 1.4s .4s ease-in-out infinite
+}
+
+@keyframes hop {
+  50% {
+    transform: translateY(-14px)
+  }
+}
+
+.bal {
+  left: 2%;
+  bottom: 6%;
+  width: calc(110px*var(--k));
+  height: calc(140px*var(--k));
+  transform-origin: bottom;
+  animation: sway 3s ease-in-out infinite alternate
+}
+
+@keyframes sway {
+  from {
+    transform: rotate(-5deg)
+  }
+
+  to {
+    transform: rotate(5deg)
+  }
+}
+
+.gift {
+  left: calc(50% + 40px*var(--k));
+  bottom: 16%;
+  font-size: calc(40px*var(--k))
+}
+
+.flw {
+  right: 5%;
+  bottom: 14%;
+  font-size: calc(52px*var(--k))
+}
+
+#helloName {
+  background: linear-gradient(transparent 70%, #ffe48a 70%);
+  padding: 0 6px;
+  min-width: 60px;
+  display: inline-block
+}
+
+/* cake */
+.cake-wrap {
+  position: relative;
+  width: min(280px, 78vw);
+  height: min(440px, 50dvh);
+  touch-action: none;
+  cursor: grab;
+  margin: 4px 0;
+  user-select: none
+}
+
+.cake-half {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  transition: transform .75s cubic-bezier(.2, .8, .3, 1)
+}
+
+.cake-half img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block
+}
+
+.cake-half.left {
+  clip-path: inset(0 50% 0 0)
+}
+
+.cake-half.right {
+  clip-path: inset(0 0 0 50%)
+}
+
+.cut .cake-half.left {
+  transform: translateX(-28px) rotate(-5deg)
+}
+
+.cut .cake-half.right {
+  transform: translateX(28px) rotate(5deg)
+}
+
+.cut-line {
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  bottom: 5%;
+  width: 2px;
+  margin-left: -1px;
+  background: repeating-linear-gradient(to bottom, #fff8 0 8px, transparent 8px 14px);
+  pointer-events: none;
+  transition: opacity .3s
+}
+
+.cut .cut-line {
+  opacity: 0
+}
+
+.knife-hint {
+  position: absolute;
+  bottom: -26px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 13px;
+  color: #a090b0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity .4s
+}
+
+.cut .knife-hint {
+  opacity: 0
+}
+
+/* wish */
+#wishScene {
+  background: radial-gradient(circle at 60% 35%, #fff3b8, transparent 40%), var(--cream)
+}
+
+.duo {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  margin-bottom: 6px
+}
+
+.duo .bear {
+  width: 110px;
+  height: 138px
+}
+
+.cakebox {
+  position: relative;
+  width: 140px;
+  height: 170px
+}
+
+.cakebox svg {
+  width: 100%;
+  height: 100%
+}
+
+.fl {
+  position: absolute;
+  top: 2%;
+  width: 9px;
+  height: 15px;
+  border-radius: 50% 50% 50% 50%/65% 65% 35% 35%;
+  background: radial-gradient(#fff, #ffb347);
+  box-shadow: 0 0 14px 4px #ffd166aa;
+  animation: flick .25s infinite alternate;
+  transition: opacity .5s
+}
+
+#wishScene.out .fl {
+  opacity: 0
+}
+
+.bear {
+  filter: drop-shadow(0 8px 10px #0002);
+  flex: none
+}
+
+.bear.big {
+  width: 130px;
+  height: 162px;
+  animation: hop 1.2s ease-in-out infinite
+}
+
+/* memories */
+.cam {
+  font-size: 44px;
+  animation: hop 1.6s ease-in-out infinite;
+  display: block
+}
+
+.polaroids {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  max-width: 310px
+}
+
+figure {
+  position: relative;
+  background: #fff;
+  padding: 8px 8px 6px;
+  box-shadow: 0 6px 14px #0002;
+  transform: rotate(-3deg)
+}
+
+figure::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 30%;
+  width: 44px;
+  height: 14px;
+  background: #c9b8ff99;
+  transform: rotate(-4deg)
+}
+
+figure:nth-child(even) {
+  transform: rotate(3deg) translateY(10px)
+}
+
+figure:nth-child(even)::before {
+  background: #ffc4d599
+}
+
+.scene.active figure {
+  animation: pop .7s both cubic-bezier(.3, 1.5, .5, 1)
+}
+
+.scene.active figure:nth-child(2) {
+  animation-delay: .2s
+}
+
+.scene.active figure:nth-child(3) {
+  animation-delay: .4s
+}
+
+.scene.active figure:nth-child(4) {
+  animation-delay: .6s
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(-40px) scale(.8)
+  }
+}
+
+figure div {
+  height: 92px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2px;
+  overflow: hidden
+}
+
+figure svg {
+  width: 38px;
+  height: 48px
+}
+
+.g1 {
+  background: linear-gradient(#cfeeff, #c8efc0)
+}
+
+.g2 {
+  background: linear-gradient(#2e2a5e, #6a4c93)
+}
+
+.g3 {
+  background: linear-gradient(#fff0c8, #ffd2b8)
+}
+
+.g4 {
+  background: linear-gradient(#ffb48a, #ffd8ec)
+}
+
+figcaption {
+  font-family: var(--script);
+  font-size: 16px;
+  padding-top: 4px
+}
+
+/* letter */
+.scene.letter-scene {
+  background: linear-gradient(160deg, #e6dcff, #fbe3ee)
+}
+
+.letter {
+  position: relative;
+  background: #e6d9c8;
+  border-radius: 14px;
+  padding: 26px 22px;
+  text-align: left;
+  box-shadow: 0 10px 26px #0002;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: var(--serif);
+  font-size: 15px;
+  line-height: 1.55
+}
+
+.letter>p,
+.letter>h2 {
+  opacity: 0
+}
+
+.scene.active .letter>p,
+.scene.active .letter>h2 {
+  animation: up .8s both;
+  animation-fill-mode: forwards;
+  opacity: 1
+}
+
+.scene.active .letter>:nth-child(5) {
+  animation-delay: .4s
+}
+
+.scene.active .letter>:nth-child(6) {
+  animation-delay: 1s
+}
+
+.scene.active .letter>:nth-child(7) {
+  animation-delay: 1.7s
+}
+
+.letter .drop {
+  font-size: 40px;
+  float: left;
+  line-height: .9;
+  margin-right: 4px;
+  color: var(--pink)
+}
+
+.letter .sign {
+  text-align: right;
+  font-style: italic
+}
+
+.letter .sign b {
+  font-family: var(--script);
+  font-size: 24px;
+  color: var(--pink);
+  font-style: normal
+}
+
+.flw2 {
+  position: absolute;
+  right: -8px;
+  top: -18px;
+  font-size: 44px
+}
+
+.bow {
+  position: absolute;
+  left: -10px;
+  top: -14px;
+  font-size: 34px
+}
+
+/* finale */
+.scene.finale {
+  background: linear-gradient(160deg, #ffe3b8, #ffc8e0 60%, #dccbff)
+}
+
+.rise {
+  bottom: -60px;
+  font-size: 52px;
+  animation: rise 6s linear infinite
+}
+
+@keyframes rise {
+  to {
+    transform: translateY(-110dvh) rotate(10deg)
+  }
+}
+
+.conf {
+  position: absolute;
+  top: -10px;
+  width: 8px;
+  height: 12px;
+  border-radius: 2px;
+  animation: fall linear forwards;
+  z-index: 5;
+  pointer-events: none
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110dvh) rotate(720deg)
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  * {
+    animation: none !important;
+    transition-duration: .01s !important
+  }
+}
+
+/* Uploaded birthday characters and cake artwork */
+.character-img {
+  object-fit: contain;
+  display: block;
+}
+
+.env .character-img {
+  object-fit: contain;
+}
+
+
+
+.duo .bear {
+  width: 105px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.cakebox {
+  width: 140px;
+  height: 190px;
+}
+
+.cakebox .cake-art {
+  width: 100%;
+  height: 100%;
+}
+
+.polaroids figure div img {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.heart-art {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  position: absolute;
+  right: -8px;
+  top: -18px;
+}
+
+@media(max-height:700px) {
+  .cake-wrap {
+    height: 245px;
+    width: 180px
+  }
+
+  .cake-wrap .cake-art {
+    object-fit: contain
+  }
+}
+
+/* Larger character artwork across every birthday scene */
+.env {
+  width: 300px;
+  height: 205px;
+  margin: 42px 0 14px;
+}
+
+.env .bL {
+  left: -34px;
+  bottom: -20px;
+  width: 142px;
+  height: 180px;
+}
+
+.env .bR {
+  right: -30px;
+  bottom: -18px;
+  width: 108px;
+  height: 150px;
+}
+
+.ghost {
+  width: calc(195px*var(--k));
+  height: calc(235px*var(--k));
+  opacity: .24;
+}
+
+.bh {
+  left: calc(50% - 175px*var(--k));
+  bottom: 2%;
+  width: calc(170px*var(--k));
+  height: calc(215px*var(--k));
+}
+
+.nh {
+  right: calc(50% - 205px*var(--k));
+  bottom: 2%;
+  width: calc(120px*var(--k));
+  height: calc(165px*var(--k));
+}
+
+.duo {
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.duo .bear {
+  width: 160px;
+  height: 220px;
+  object-fit: contain;
+}
+
+.cakebox {
+  width: 190px;
+  height: 230px;
+  flex: none;
+}
+
+.cakebox .cake-art {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cake-wrap {
+  width: min(280px, 82vw);
+  height: min(440px, 50dvh);
+  margin: 0 0 4px;
+}
+
+.polaroids {
+  max-width: 370px;
+  width: 100%;
+  gap: 16px;
+}
+
+.polaroids figure {
+  padding: 9px 9px 7px;
+}
+
+.polaroids figure div {
+  height: 145px;
+}
+
+.polaroids figure div img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.heart-art {
+  width: 58px;
+  height: 58px;
+}
+
+.bear.big {
+  width: 215px;
+  height: 265px;
+  object-fit: contain;
+}
+
+@media(max-width:480px) {
+  .env {
+    width: 270px;
+    height: 190px;
+  }
+
+  .env .bL {
+    left: -20px;
+    width: 126px;
+    height: 162px;
+  }
+
+  .env .bR {
+    right: -18px;
+    width: 92px;
+    height: 128px;
+  }
+
+  .duo .bear {
+    width: 145px;
+    height: 195px;
+  }
+
+  .cakebox {
+    width: 160px;
+    height: 205px;
+  }
+
+  .polaroids {
+    max-width: 340px;
+    gap: 10px;
+  }
+
+  .polaroids figure div {
+    height: 125px;
+  }
+
+  .bear.big {
+    width: 190px;
+    height: 240px;
+  }
+}
+
+@media(max-height:700px) {
+  .cake-wrap {
+    height: 38dvh;
+    width: min(220px, 60vw);
+  }
+
+  .duo .bear {
+    height: 160px;
+  }
+
+  .cakebox {
+    height: 175px;
+    width: 145px;
+  }
+
+  .polaroids figure div {
+    height: 90px;
+  }
+
+  .bear.big {
+    width: 160px;
+    height: 195px;
+  }
+}
